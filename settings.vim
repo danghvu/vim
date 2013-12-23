@@ -106,11 +106,11 @@ if g:OS#gui
   if g:OS#unix
     set guioptions-=m
     nmap <F8> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
-    set gfn=Menlo\ for\ Powerline\ 10
+    set gfn=Liberation\ Mono\ 11
   endif
   " Mac
   if g:OS#mac
-    set guifont=Menlo\ for\ Powerline:h12
+    set guifont=Menlo\ for\ Powerline:h13
   endif
   set lines=50 columns=80
 endif
@@ -130,7 +130,7 @@ set noswapfile
 if has('persistent_undo')
   set undodir=$HOME/.vim/.undofile
   set undofile
-  set undolevels=100   "maximum number of changes that can be undone
+  set undolevels=1000  "maximum number of changes that can be undone
   set undoreload=10000 "maximum number lines to save for undo on a buffer reload
   if ! isdirectory(&undodir)
     call mkdir(&undodir, 'p')

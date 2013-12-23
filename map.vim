@@ -3,6 +3,9 @@
 let mapleader=","
 let g:mapleader=","
 
+" I can type :help on my own, thanks.
+nmap <F1> <Esc>
+
 " F2 = Paste Toggle
 set pastetoggle=<F2>
 
@@ -41,15 +44,21 @@ nmap k gk
 " Make Y consistent with C and D. See :help Y.
 nmap Y y$
 
+" jump to start/end of line
+noremap H ^
+noremap L $
+
 " easier formatting of paragraphs
 vmap Q gq
 nmap Q gqap
 
 " Use tab to indent a line
-vmap <TAB> >gv
-vmap <S-TAB> <gv
 vmap < <gv
 vmap > >gv
+
+" Easier increment/decrement
+nmap + <C-a>
+nmap - <C-x>
 
 " Keep search pattern at the center of the screen
 nmap <silent> n nzz
@@ -63,11 +72,11 @@ nmap <silent> g# g#zz
 nmap ,, :tabp<CR>
 nmap .. :tabn<CR>
 
-" Close tab/Quit vim
-if g:OS#unix
-  nmap <C-w> :bw<CR>
-  nmap <C-q> :q<CR>
-endif
+" move between windows
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
 
 " switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>
