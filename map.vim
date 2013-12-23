@@ -59,9 +59,9 @@ nmap <silent> # #zz
 nmap <silent> g* g*zz
 nmap <silent> g# g#zz
 
-" move between buffers
-nmap <C-S-TAB> :bprev<CR>
-nmap <C-TAB> :bnext<CR>
+" move between tab
+nmap ,, :tabp<CR>
+nmap .. :tabn<CR>
 
 " Close tab/Quit vim
 if g:OS#unix
@@ -81,3 +81,10 @@ nmap <leader>1 yyPVr=jyypVr=
 nmap <leader>2 yyPVr-jyypVr-
 nmap <leader>3 yypVr=
 nmap <leader>4 yypVr-
+
+map <C-l> :NERDTree<CR>
+map <C-d> :sh<CR>
+
+" Fix the bug with [[ when using function() { style
+map [[ ][%
+

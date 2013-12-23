@@ -38,11 +38,11 @@ else
 endif
 
 " Enable mouse
-if has("mouse")
-  set mouse=a
-  set mousemodel=popup
-  set mousehide
-endif
+"if has("mouse")
+"  set mouse=a
+"  set mousemodel=popup
+"  set mousehide
+"endif
 
 " Multiplatform compatibility
 if g:OS#win
@@ -58,7 +58,7 @@ endif
 
 " Editor Settings
 set lazyredraw           " do not redraw while running macros (much faster) (Lazy Redraw)
-set equalalways          " Close a split window in Vim without resizing other windows
+" set equalalways          " Close a split window in Vim without resizing other windows
 set guitablabel=%t
 set number               " turn on line numbers
 set linespace=0          " space it out a little more (easier to read)
@@ -159,7 +159,7 @@ let &sbr = nr2char(8618).' ' " Show ↪ at the beginning of wrapped lines
 set ignorecase      " select case-insenitiv search
 set smartcase       " No ignorecase if Uppercase chars in search
 set magic           " change the way backslashes are used in search patterns
-set showmatch       " jump to matches during entering the pattern
+"set showmatch       " jump to matches during entering the pattern
 set matchtime=2     " How many tenths of a second to blink
 set matchpairs+=<:> " these tokens belong together
 set hlsearch        " highlight all matches...
@@ -174,3 +174,5 @@ set foldlevel=1           " start out with everything folded
 set foldnestmax=10        "deepest fold is 10 levels
 set foldtext=MyFoldText() " Which command trigger auto-unfold
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
+
+highlight LineNr ctermfg=grey

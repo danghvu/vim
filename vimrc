@@ -27,3 +27,7 @@ source $HOME/.vim/bundles.vim
 source $HOME/.vim/plugins.vim
 source $HOME/.vim/functions.vim
 source $HOME/.vim/autocmd.vim
+
+" fix unicode problem
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''

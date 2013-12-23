@@ -44,7 +44,7 @@ if g:OS#mac
 end
 let g:easytags_file = $HOME.'/.vim/.tags'
 let g:easytags_events = ['BufWritePost']
-set tags=./.tags;
+set tags=./.tags,tags;$HOME
 
 " emmet
 let g:user_emmet_leader_key = '<c-e>'
@@ -62,10 +62,6 @@ let g:indentLine_char = '│'
 
 " less
 nmap <Leader>css :w <BAR> !lessc % > %:t:r.css<CR><space>
-
-" markdown preview
-nmap <silent><leader>p :MDP<CR>
-let g:MarkdownPreviewTMP = $HOME.'/Sites/'
 
 " NERDcommenter
 let NERDSpaceDelims=1
@@ -86,10 +82,10 @@ let g:NERDTreeIgnore=[
       \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$' ]
 
 " rainbow parentheses
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
 
 " syntastic
 let g:syntastic_enable_balloons = 1
@@ -124,17 +120,19 @@ nmap <silent><leader>T :TagbarToggle<CR>
 nmap <leader>u :UndotreeToggle<CR>
 
 " ultisnips
-let g:UltiSnipsExpandTrigger="<TAB>"
-let g:UltiSnipsJumpForwardTrigger="<TAB>"
-let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
+"let g:UltiSnipsExpandTrigger="<TAB>"
+"let g:UltiSnipsJumpForwardTrigger="<TAB>"
+"let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 
 " YouCompleteMe
 let g:ycm_register_as_syntastic_checker = 1
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
-let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
 if g:OS#gui
   let g:ycm_key_invoke_completion = '<C-Space>'
 else
   let g:ycm_key_invoke_completion = '<C-@>'
 endif
+
+let g:clang_snippets_engine='clang_complete'

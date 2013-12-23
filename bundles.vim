@@ -22,36 +22,36 @@ endif
 if count(g:bundle_groups, 'general')
   "Bundle 'gregsexton/VimCalc'
   "Bundle 'hotoo/calendar-vim'
-  Bundle 'Lokaltog/vim-easymotion'
+  "Bundle 'Lokaltog/vim-easymotion'
   Bundle 'scrooloose/nerdtree'
-  Bundle 'kien/ctrlp.vim'
-  Bundle 'mbbill/undotree'
-  Bundle 'spolu/dwm.vim'
-  Bundle 'Stormherz/tablify'
-  Bundle 'bling/vim-bufferline'
-  Bundle 'mhinz/vim-startify'
+  "Bundle 'kien/ctrlp.vim'
+  "Bundle 'mbbill/undotree'
+  "Bundle 'spolu/dwm.vim'
+  "Bundle 'Stormherz/tablify'
+  "Bundle 'bling/vim-bufferline'
+  "Bundle 'mhinz/vim-startify'
   Bundle 'bling/vim-airline'
-  Bundle 'yonchu/accelerated-smooth-scroll'
+  "Bundle 'yonchu/accelerated-smooth-scroll'
   if executable('ack')
-    Bundle 'mileszs/ack.vim'
+    "Bundle 'mileszs/ack.vim'
   endif
 endif
 " PROGRAMMING
 if count(g:bundle_groups, 'programming')
   Bundle 'Valloric/YouCompleteMe'
   Bundle 'SirVer/ultisnips'
-  Bundle 'Yggdroot/indentLine'
-  Bundle 'godlygeek/tabular'
-  Bundle 'Raimondi/delimitMate'
-  Bundle 'kien/rainbow_parentheses.vim'
-  Bundle 'scrooloose/nerdcommenter'
-  Bundle 'scrooloose/syntastic'
-  Bundle 'tpope/vim-fugitive'
-  if executable('ctags')
-    Bundle 'majutsushi/tagbar'
-    Bundle 'xolox/vim-misc'
-    Bundle 'xolox/vim-easytags'
-  endif
+  "Bundle 'Yggdroot/indentLine'
+  "Bundle 'godlygeek/tabular'
+  "Bundle 'Raimondi/delimitMate'
+  "Bundle 'kien/rainbow_parentheses.vim'
+  "Bundle 'scrooloose/nerdcommenter'
+  "Bundle 'scrooloose/syntastic'
+  "Bundle 'tpope/vim-fugitive'
+  "if executable('ctags')
+    "Bundle 'majutsushi/tagbar'
+    "Bundle 'xolox/vim-misc'
+    "Bundle 'xolox/vim-easytags'
+  "endif
 endif
 " PHP
 if count(g:bundle_groups, 'php')
@@ -59,19 +59,19 @@ if count(g:bundle_groups, 'php')
 endif
 " COFFESCRIPT|JAVASCRIPT
 if count(g:bundle_groups, 'javascript')
-  Bundle 'kchmck/vim-coffee-script'
-  Bundle 'jelera/vim-javascript-syntax'
+  "Bundle 'kchmck/vim-coffee-script'
+  "Bundle 'jelera/vim-javascript-syntax'
 endif
 " CSS|HTML
 if count(g:bundle_groups, 'html')
-  Bundle 'mattn/emmet-vim'
-  Bundle 'groenewege/vim-less'
-  Bundle 'tpope/vim-haml'
+  "Bundle 'mattn/emmet-vim'
+  "Bundle 'groenewege/vim-less'
+  "Bundle 'tpope/vim-haml'
 endif
 " MARKDOWN
 if count(g:bundle_groups, 'markdown')
-  Bundle 'mkitt/markdown-preview.vim'
-  Bundle 'tpope/vim-markdown'
+  "Bundle 'tpope/vim-markdown'
+  "Bundle 'suan/vim-instant-markdown'
 endif
 " COLORSCHEME
 if count(g:bundle_groups, 'colorscheme')
