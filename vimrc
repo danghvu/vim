@@ -31,3 +31,10 @@ source $HOME/.vim/autocmd.vim
 " fix unicode problem
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+
+" to set the cursor
+autocmd BufReadPost *
+      \ if line("'\"") > 1 && line("'\"") <= line("$") |
+      \   exe "normal! g`\"" |
+      \ endif
+
