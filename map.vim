@@ -91,9 +91,8 @@ nmap <leader>2 yyPVr-jyypVr-
 nmap <leader>3 yypVr=
 nmap <leader>4 yypVr-
 
-map <C-l> :NERDTree<CR>
+map <C-i> :NERDTree<CR>
 map <C-d> :sh<CR>
 
 " Fix the bug with [[ when using function() { style
 map [[ ][%
-
