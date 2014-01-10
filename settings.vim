@@ -88,11 +88,11 @@ set background=dark
 if g:OS#gui
   set t_Co=256
   " colorscheme badwolf
-  " colorscheme kolor
   colorscheme gruvbox
 elseif &t_Co >= 256
   set t_Co=256
-  colorscheme badwolf
+  " colorscheme badwolf
+  colorscheme harlequin
 else
   set t_Co=8
   set t_Sf=^[[3%p1%dm
@@ -110,7 +110,7 @@ if g:OS#gui
   endif
   " Mac
   if g:OS#mac
-    set guifont=Menlo\ for\ Powerline:h13
+    set guifont=Menlo:h13
   endif
   set lines=50 columns=80
 endif
@@ -162,16 +162,14 @@ set magic           " change the way backslashes are used in search patterns
 "set showmatch       " jump to matches during entering the pattern
 set matchtime=2     " How many tenths of a second to blink
 set matchpairs+=<:> " these tokens belong together
-set hlsearch        " highlight all matches...
+set hlsearch      " highlight all matches...
 set incsearch       " ...and also during entering the pattern
 nohlsearch          " avoid highlighting when reloading vimrc
 
 " Folding
-set foldenable          " enable folding
-set foldcolumn=2          " add a fold column
-set foldmethod=marker     " detect triple-{ style fold markers
+set foldenable            " enable folding
+set foldmethod=indent     " detect triple-{ style fold markers
 set foldlevel=1           " start out with everything folded
-set foldnestmax=10        "deepest fold is 10 levels
 set foldtext=MyFoldText() " Which command trigger auto-unfold
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
 
