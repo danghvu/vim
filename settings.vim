@@ -85,6 +85,7 @@ if &t_Co > 2 || g:OS#gui
 endif
 " default colorscheme
 set background=dark
+
 if g:OS#gui
   set t_Co=256
   " colorscheme badwolf
@@ -167,10 +168,10 @@ set incsearch       " ...and also during entering the pattern
 nohlsearch          " avoid highlighting when reloading vimrc
 
 " Folding
-set foldenable            " enable folding
-set foldmethod=indent     " detect triple-{ style fold markers
-set foldlevel=1           " start out with everything folded
-set foldtext=MyFoldText() " Which command trigger auto-unfold
-set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
+"set foldenable            " enable folding
+"set foldmethod=indent     " detect triple-{ style fold markers
+"set foldlevel=1           " start out with everything folded
+"set foldtext=MyFoldText() " Which command trigger auto-unfold
+"set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
 
 highlight LineNr ctermfg=grey

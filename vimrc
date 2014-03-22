@@ -19,7 +19,15 @@ if has("gui_running")
   let g:OS#gui = 1
 else
   let g:OS#gui = 0
+  set term=screen-256color
 endif
+
+"if $TERM =~ '^screen-256color'
+  map <Esc>OH <Home>
+  map! <Esc>OH <Home>
+  map <Esc>OF <End>
+  map! <Esc>OF <End>
+"endif
 
 source $HOME/.vim/settings.vim
 source $HOME/.vim/map.vim

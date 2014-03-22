@@ -15,7 +15,8 @@ Bundle 'gmarik/vundle'
 " Bundle Groups
 " List only the plugin groups you will use
 if !exists('g:bundle_groups')
-  let g:bundle_groups=['general', 'programming', 'php', 'javascript', 'html', 'markdown', 'colorscheme']
+  let g:bundle_groups=['general', 'programming', 'php', 'colorscheme']
+  " 'javascript', 'html', 'markdown', 'colorscheme']
 endif
 " Bundles here:
 " GENERAL
@@ -28,9 +29,10 @@ if count(g:bundle_groups, 'general')
   "Bundle 'mbbill/undotree'
   "Bundle 'spolu/dwm.vim'
   "Bundle 'Stormherz/tablify'
-  "Bundle 'bling/vim-bufferline'
+  Bundle 'bling/vim-bufferline'
   "Bundle 'mhinz/vim-startify'
   Bundle 'bling/vim-airline'
+  Bundle 'christoomey/vim-tmux-navigator'
   "Bundle 'yonchu/accelerated-smooth-scroll'
   if executable('ack')
     "Bundle 'mileszs/ack.vim'
@@ -39,7 +41,7 @@ endif
 " PROGRAMMING
 if count(g:bundle_groups, 'programming')
   Bundle 'Valloric/YouCompleteMe'
-  Bundle 'SirVer/ultisnips'
+  "Bundle 'SirVer/ultisnips'
   "Bundle 'Yggdroot/indentLine'
   "Bundle 'godlygeek/tabular'
   "Bundle 'Raimondi/delimitMate'
@@ -59,19 +61,19 @@ if count(g:bundle_groups, 'php')
 endif
 " COFFESCRIPT|JAVASCRIPT
 if count(g:bundle_groups, 'javascript')
-  "Bundle 'kchmck/vim-coffee-script'
-  "Bundle 'jelera/vim-javascript-syntax'
+  Bundle 'kchmck/vim-coffee-script'
+  Bundle 'jelera/vim-javascript-syntax'
 endif
 " CSS|HTML
 if count(g:bundle_groups, 'html')
-  "Bundle 'mattn/emmet-vim'
-  "Bundle 'groenewege/vim-less'
-  "Bundle 'tpope/vim-haml'
+  Bundle 'mattn/emmet-vim'
+  Bundle 'groenewege/vim-less'
+  Bundle 'tpope/vim-haml'
 endif
 " MARKDOWN
 if count(g:bundle_groups, 'markdown')
-  "Bundle 'tpope/vim-markdown'
-  "Bundle 'suan/vim-instant-markdown'
+  Bundle 'tpope/vim-markdown'
+  Bundle 'suan/vim-instant-markdown'
 endif
 " COLORSCHEME
 if count(g:bundle_groups, 'colorscheme')
