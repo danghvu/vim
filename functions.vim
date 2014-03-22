@@ -14,13 +14,13 @@ function! ToggleSpell()
   else
     set spelllang=pt
     set spell!
-    echo "toogle spell" &spelllang
+    echo "toggle spell" &spelllang
   endif
 endfunction
-" Toggle Spellcheck
-nmap <silent><Leader>ss :call ToggleSpell()<CR>
+" Toggle spell check
+nmap <silent>ts :call ToggleSpell()<CR>
 
-" press ~ to convert the text to UPPER CASE, then to lower case, then to Title Case.
+" Convert text case
 function! TwiddleCase(str)
   if a:str ==# toupper(a:str)
     let result = tolower(a:str)
@@ -33,6 +33,23 @@ function! TwiddleCase(str)
 endfunction
 vmap ~ ygv"=TwiddleCase(@")<CR>Pgv
 
+" Convert variable case
+function! TwistCase(str)
+  if a:str =~# '^[a-z0-9_]\+[!?]\?$'
+    let result = substitute(a:str, '_', '-', 'g')
+  elseif a:str =~# '^[a-z0-9?!-]\+[!?]\?$'
+    let result = substitute(a:str, '\C-\([^-]\)', '\u\1', 'g')
+  elseif a:str =~# '^[a-z0-9]\+\([A-Z][a-z0-9]*\)\+[!?]\?$'
+    let result = toupper(a:str[0]) . strpart(a:str, 1)
+  elseif a:str =~# '^\([A-Z][a-z0-9]*\)\{2,}[!?]\?$'
+    let result = strpart(substitute(a:str, '\C\([A-Z]\)', '_\l\1', 'g'), 1)
+  else
+    let result = toupper(a:str)
+  endif
+  return result
+endfunction
+vmap ^ ygv"=TwistCase(@")<CR>Pgv
+
 function! DualView()
   if &columns == '80'
     set lines=50 columns=160
@@ -43,14 +60,14 @@ function! DualView()
     only
   endif
 endfunction
-nmap <Leader>d :call DualView()<CR>
+nmap <silent><Leader>d :call DualView()<CR>
 
 function! LastModified()
   if &modified
     let save_cursor = getpos(".")
     let n = min([20, line("$")])
     exe '1,' . n . 's#^\(.\{,10}Last Change:\).*#\1'
-          \ strftime("%a %d/%b/%Y hs %H:%M") . '#e'
+          \ strftime("%a %d/%b/%Y hr %H:%M") . '#e'
     call setpos('.', save_cursor)
   endif
 endfun
@@ -79,4 +96,16 @@ fun! ToggleFold()
     exe 'set foldmethod=marker'
   endif
 endfun
-map <leader>ff :call ToggleFold()<cr>
+map <silent>tf :call ToggleFold()<cr>
+
+function! StripTrailingWhitespace()
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " do the business:
+  %s/\s\+$//e
+  " clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction

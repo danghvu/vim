@@ -69,6 +69,10 @@ if count(g:bundle_groups, 'html')
   Bundle 'mattn/emmet-vim'
   Bundle 'groenewege/vim-less'
   Bundle 'tpope/vim-haml'
+  Bundle 'mustache/vim-mustache-handlebars'
+  Bundle 'vim-ruby/vim-ruby'
+  Bundle 'tpope/vim-rails'
+  Bundle 'tpope/vim-bundler'
 endif
 " MARKDOWN
 if count(g:bundle_groups, 'markdown')
@@ -80,8 +84,8 @@ if count(g:bundle_groups, 'colorscheme')
   Bundle 'altercation/vim-colors-solarized'
   Bundle 'lsdr/monokai'
   Bundle 'morhetz/gruvbox'
-  Bundle 'nielsmadan/harlequin'
   Bundle 'sjl/badwolf'
+  Bundle 'reedes/vim-colors-pencil'
 endif
 if iCanHazVundle == 0
   echo "Installing Bundles, please ignore key map error messages"
