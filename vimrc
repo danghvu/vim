@@ -18,3 +18,14 @@ source $HOME/.vim/bundles.vim
 source $HOME/.vim/plugins.vim
 source $HOME/.vim/functions.vim
 source $HOME/.vim/autocmd.vim
+
+"to set the cursor
+autocmd BufReadPost *
+\ if line("'\"") > 1 && line("'\"") <= line("$") |
+\   exe "normal! g`\"" |
+\ endif
+
+map <Esc>OH <Home>
+map! <Esc>OH <Home>
+map <Esc>OF <End>
+map! <Esc>OF <End>

@@ -91,7 +91,7 @@
     let g:easytags_cmd = '/usr/local/bin/ctags'
   end
   let g:easytags_file = $HOME.'/.vim/.tags'
-  set tags=./.tags;
+  set tags=./.tags,tags;$HOME
 
 " emmet
   let g:user_emmet_leader_key = '<C-e>'
@@ -225,7 +225,7 @@
     let g:ycm_autoclose_preview_window_after_completion = 1
     let g:ycm_autoclose_preview_window_after_insertion = 1
     let g:ycm_seed_identifiers_with_syntax = 1
-    let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+    let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
     let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
     if GUI()
       let g:ycm_key_invoke_completion = '<C-Space>'
